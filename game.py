@@ -41,8 +41,20 @@ def randomNumber() -> int:
         return 4
 
 
+def addNumber(grid: list, freeCells: list) -> None:
+    '''Add number to the free cell on the grid'''
+    
+    rndCell = random.choices(freeCells)
+    grid[rndCell[0].get('x')][rndCell[0].get('y')] = randomNumber()
+
+
 if __name__ == '__main__':
     print(f"Number of free cells is {len(freeCells(grid))}")
     print()
+    printGrid(grid)
+
+    for i in range(5):
+        addNumber(grid, freeCells(grid))
+
     printGrid(grid)
 
