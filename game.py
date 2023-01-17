@@ -1,3 +1,4 @@
+import random
 
 grid = [
     [0, 0, 0, 0],
@@ -29,6 +30,15 @@ def printGrid(grid: list) -> None:
             line += f"\t{grid[i][j]}"
         print(line)
     print()
+
+
+def randomNumber() -> int:
+    '''Draw the number either 2 or 4. The probability of number 2 is 80%.'''
+
+    if random.random() < 0.8:
+        return 2
+    else:
+        return 4
 
 
 if __name__ == '__main__':
