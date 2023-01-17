@@ -1,7 +1,9 @@
 import random
 
 def initGrid(size: int) -> list:
-    '''Initiliaze grid with two number'''
+    '''Initiliaze grid with two number
+    
+    size: grid width and height'''
     grid = []
 
     for i in range(size):
@@ -18,7 +20,9 @@ def initGrid(size: int) -> list:
 
 
 def freeCells(grid: list) -> list:
-    '''Function return list of empty cells. Empty cells in gris are 0.'''
+    '''Function return list of empty cells. Empty cells in gris are 0.
+    
+    grid: grid to find and list empty cells'''
 
     freeCells = []
 
@@ -31,7 +35,10 @@ def freeCells(grid: list) -> list:
 
 
 def printGrid(grid: list) -> None:
-    '''Print grid in the screen'''
+    '''Print grid in the screen
+    
+    
+    grid: grid to print'''
 
     for i in range(4):
         line = ''
@@ -53,7 +60,10 @@ def randomNumber() -> int:
 
 
 def addNumber(grid: list, freeCells: list) -> None:
-    '''Add number to the free cell on the grid'''
+    '''Add number to the free cell on the grid
+    
+    grid: grid where to add number
+    freeCells: list of grid's free cells'''
     
     rndCell = random.choices(freeCells)
     grid[rndCell[0].get('x')][rndCell[0].get('y')] = randomNumber()
