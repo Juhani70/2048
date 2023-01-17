@@ -1,8 +1,8 @@
 import random
 
-def initGrid() -> list:
+def initGrid(size: int) -> list:
+    '''Initiliaze grid with two number'''
     grid = []
-    size = 4
 
     for i in range(size):
         line = []
@@ -60,7 +60,7 @@ def addNumber(grid: list, freeCells: list) -> None:
 
 
 if __name__ == '__main__':
-    grid = initGrid()
+    grid = initGrid(4)
 
     print(f"Number of free cells is {len(freeCells(grid))}")
     print()
