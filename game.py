@@ -69,6 +69,25 @@ def addNumber(grid: list, freeCells: list) -> None:
     grid[rndCell[0].get('x')][rndCell[0].get('y')] = randomNumber()
 
 
+def slide(grid: list, direction: int) -> None:
+    '''Slide move cells to selected direction
+    
+    directions:
+        0: up
+        1: down
+        2: left
+        3: right'''
+
+    pass
+
+
+def compactGrid(line: list) -> None:
+    '''Remove empty cells and move numbers to selected direction. Empty cells are filled with '0'.
+    
+    line: Row or column to compact'''
+    pass
+
+
 if __name__ == '__main__':
     grid = initGrid(4)
 
