@@ -20,7 +20,19 @@ def freeCells(grid: list) -> list:
     return freeCells
 
 
+def printGrid(grid: list) -> None:
+    '''Print grid in the screen'''
+
+    for i in range(4):
+        line = ''
+        for j in range(4):
+            line += f"\t{grid[i][j]}"
+        print(line)
+    print()
+
+
 if __name__ == '__main__':
     print(f"Number of free cells is {len(freeCells(grid))}")
-    print(grid)
+    print()
+    printGrid(grid)
 
