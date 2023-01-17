@@ -1,11 +1,20 @@
 import random
 
-grid = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0]
-]
+def initGrid() -> list:
+    grid = []
+    size = 4
+
+    for i in range(size):
+        line = []
+        for j in range(size):
+            line.append(0)
+        grid.append(line)
+
+    # Init grid with two numbers
+    for i in range(2):
+        addNumber(grid, freeCells(grid))
+    
+    return grid
 
 
 def freeCells(grid: list) -> list:
@@ -51,6 +60,8 @@ def addNumber(grid: list, freeCells: list) -> None:
 
 
 if __name__ == '__main__':
+    grid = initGrid()
+
     print(f"Number of free cells is {len(freeCells(grid))}")
     print()
     printGrid(grid)
