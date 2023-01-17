@@ -35,10 +35,12 @@ def printGrid(grid: list) -> None:
 def randomNumber() -> int:
     '''Draw the number either 2 or 4. The probability of number 2 is 80%.'''
 
-    if random.random() < 0.8:
-        return 2
-    else:
-        return 4
+    # if random.random() < 0.8:
+    #     return 2
+    # else:
+    #     return 4
+
+    return random.choices([2, 4], weights=(80, 20))[0]
 
 
 def addNumber(grid: list, freeCells: list) -> None:
