@@ -81,10 +81,16 @@ def slide(grid: list, direction: int) -> None:
     pass
 
 
-def compactGrid(line: list) -> None:
-    '''Remove empty cells and move numbers to selected direction. Empty cells are filled with '0'.
+def compactGrid(grid: list, direction: int) -> None:
+    '''Move numbers and remove zeros between them.
     
-    line: Row or column to compact'''
+    grid: Game board\n
+    directions:
+        0: up
+        1: down
+        2: left
+        3: right'''
+    
     pass
 
 
