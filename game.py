@@ -91,7 +91,32 @@ def compactGrid(grid: list, direction: int) -> None:
         2: left
         3: right'''
     
-    pass
+    # If direction is not known return grid with doing nothing
+    if direction not in [0, 1, 2, 3]:
+        print("Direcion unknown!")
+        return
+
+    # Iterate through the rows or columns of the grid
+    # Direction left or right iteration row by rows
+    if direction in [2, 3]:
+        if direction == 2:
+            for  row in grid:
+                i = 0
+
+                while i < len(row) - 1:
+                    #If cell is empty ...
+                    if row[i] == 0:
+                        # find next cell witch not ...
+                        for j in range(i + 1, len(row)):
+                            if row[j] != 0:
+                                # and swap them
+                                row[i], row[j] = row[j], row[i]
+                                break
+                    i += 1
+
+    else: # Direction up or down
+        pass
+    
 
 
 if __name__ == '__main__':
@@ -106,3 +131,6 @@ if __name__ == '__main__':
 
     printGrid(grid)
 
+    compactGrid(grid, 2)
+
+    printGrid(grid)
