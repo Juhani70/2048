@@ -113,7 +113,21 @@ def compactGrid(grid: list, direction: int) -> None:
                                 row[i], row[j] = row[j], row[i]
                                 break
                     i += 1
+        else:
+            for  row in grid:
+                i = len(row) - 1
 
+                while i >= 0:
+                    #If cell is empty ...
+                    if row[i] == 0:
+                        # find next cell witch not ...
+                        for j in range(i - 1, -1, -1):
+                            if row[j] != 0:
+                                # and swap them
+                                row[i], row[j] = row[j], row[i]
+                                break
+                    i -= 1
+    
     else: # Direction up or down
         pass
     
@@ -131,6 +145,6 @@ if __name__ == '__main__':
 
     printGrid(grid)
 
-    compactGrid(grid, 2)
+    compactGrid(grid, 3)
 
     printGrid(grid)
