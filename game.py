@@ -129,22 +129,30 @@ def compactGrid(grid: list, direction: int) -> None:
                     i -= 1
     
     else: # Direction up or down
-        pass
-    
+        if direction == 0:
+            for j in range(0,len(grid)):
+                for i in range(0, len(grid)):
+                    #If cell is empty ...
+                    if grid[i][j] == 0:
+                        # find next cell witch not ...
+                        for k in range(i + 1, len(grid)):
+                            if grid[k][j] != 0:
+                                # and swap them
+                                grid[k][j], grid[i][j] = grid[i][j], grid[k][j]
+                                break
+
+                    
+        
 
 
 if __name__ == '__main__':
     grid = initGrid(4)
 
-    print(f"Number of free cells is {len(freeCells(grid))}")
-    print()
-    printGrid(grid)
-
-    for i in range(5):
+    for add in range(5):
         addNumber(grid, freeCells(grid))
 
     printGrid(grid)
 
-    compactGrid(grid, 3)
+    compactGrid(grid, 0)
 
     printGrid(grid)
