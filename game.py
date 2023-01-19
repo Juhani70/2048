@@ -153,7 +153,16 @@ def compactGrid(grid: list, direction: int) -> None:
                                 break
                     
         
-
+def combineGrid(grid: list, direction: int) -> None:
+    '''Combine numbers and add zeros to end.
+    
+    grid: Game board\n
+    directions:
+        0: up
+        1: down
+        2: left
+        3: right'''
+        
 
 if __name__ == '__main__':
     grid = initGrid(4)
