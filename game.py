@@ -99,7 +99,7 @@ def compactGrid(grid: list, direction: int) -> None:
     # Iterate through the rows or columns of the grid
     # Direction left or right iteration row by rows
     if direction in [2, 3]:
-        if direction == 2:
+        if direction == 2: # direction left
             for  row in grid:
                 i = 0
 
@@ -113,7 +113,7 @@ def compactGrid(grid: list, direction: int) -> None:
                                 row[i], row[j] = row[j], row[i]
                                 break
                     i += 1
-        else:
+        else: # direction == 3 right
             for  row in grid:
                 i = len(row) - 1
 
