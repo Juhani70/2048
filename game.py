@@ -188,6 +188,24 @@ def combineGrid(grid: list, direction: int) -> None:
                             row[j], row[j+1] = row[j+1], row[j]
 
                     i += 1
+        else: # direction == 3 right
+            for  row in grid:
+                i = len(row) - 1
+
+                while i >= 0:
+                    # If cell and next before is same ....
+                    if row[i] == row[i-1]:
+                        # Combine them and mark other one to zero
+                        row[i] *= 2
+                        row[i-1] = 0
+
+                        # Swap others ones
+                        for j in range(i-1, 0, -1):
+                            row[j], row[j-1] = row[j-1], row[j]
+
+                    i -= 1
+
+
 
         
 
@@ -199,10 +217,10 @@ if __name__ == '__main__':
 
     printGrid(grid)
 
-    compactGrid(grid, 2)
+    compactGrid(grid, 3)
 
     printGrid(grid)
 
-    combineGrid(grid, 2)
+    combineGrid(grid, 3)
 
     printGrid(grid)
