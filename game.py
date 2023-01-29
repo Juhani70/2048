@@ -162,6 +162,33 @@ def combineGrid(grid: list, direction: int) -> None:
         1: down
         2: left
         3: right'''
+
+    # If direction is not known return grid with doing nothing
+    if direction not in [0, 1, 2, 3]:
+        print("Direcion unknown!")
+        return
+
+    # Iterate through the rows or columns of the grid
+    # Direction left or right iteration row by rows
+    if direction in [2, 3]:
+        if direction == 2: # direction left
+            for  row in grid:
+                i = 0
+
+                while i < len(row) - 1:
+                    if row[i] == row[i+1]:
+                        # If cell and next one is same ....
+                        # Combine them and mark next one to zero
+                        row[i] *= 2
+                        row[i+1] = 0
+
+                        # Swap others cells
+
+                        for j in range(i+1, len(row)-1):
+                            row[j], row[j+1] = row[j+1], row[j]
+
+                    i += 1
+
         
 
 if __name__ == '__main__':
@@ -172,6 +199,10 @@ if __name__ == '__main__':
 
     printGrid(grid)
 
-    compactGrid(grid, 1)
+    compactGrid(grid, 2)
+
+    printGrid(grid)
+
+    combineGrid(grid, 2)
 
     printGrid(grid)
